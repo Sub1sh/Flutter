@@ -31,6 +31,12 @@ class _HomePageState extends State<HomePage> {
 
           ElevatedButton(
             onPressed: () {
+              Navigator.pushNamed(context, AppRoute.signup);
+            },
+            child: Text('Signup'),),
+
+          ElevatedButton(
+            onPressed: () {
               Navigator.pushNamed(context, AppRoute.identityCard);
 
             },

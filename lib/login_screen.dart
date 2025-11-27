@@ -78,11 +78,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       color: Colors.black.withOpacity(0.6),
                     ),
                     border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey, width: 1),
+                      borderSide: BorderSide(color: Colors.white, width: 1),
                       borderRadius: BorderRadius.all(Radius.circular(8)),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey, width: 1),
+                      borderSide: BorderSide(color: Colors.white, width: 1),
                     ),
                     contentPadding: EdgeInsets.symmetric(
                       horizontal: 10,
@@ -152,7 +152,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
-                    'assets/images/google.jpg',
+                    'assets/images/google.png',
                     width: 26, height: 26,),
                   SizedBox(width: 10,),
                   Text(
