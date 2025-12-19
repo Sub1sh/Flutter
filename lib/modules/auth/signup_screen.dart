@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:swastik/app_route.dart';
-import 'app_routes.dart';
-import 'app_text_styles.dart';
-import 'app_text_styles.dart';
+import '../../app_routes.dart';
+import '../../app_text_styles.dart';
+import '../../app_text_styles.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});

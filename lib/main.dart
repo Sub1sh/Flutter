@@ -1,14 +1,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:swastik/app_routes.dart';
-import 'package:swastik/class_app.dart';
+import 'package:swastik/modules/extra/class_app.dart';
 import 'package:swastik/identity_card_view.dart';
-import 'package:swastik/morning_class.dart';
-import 'package:swastik/simple_interest.dart';
-import 'package:swastik/subtract.dart';
 
-import 'monday_class.dart';
-import 'multiply.dart';
+import 'package:swastik/modules/extra/subtract.dart';
+
 
 void main(){
   runApp(Myapp());

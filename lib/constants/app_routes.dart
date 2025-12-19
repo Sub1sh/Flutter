@@ -2,8 +2,9 @@ import 'package:swastik/modules/extra/home_page.dart';
 import 'package:swastik/modules/auth/login_screen.dart';
 import 'package:swastik/modules/auth/signup_screen.dart';
 
-import 'identity_card_view.dart';
-import 'modules/extra/identity_card_view.dart';
+import '../identity_card_view.dart';
+import '../modules/extra/identity_card_view.dart';
+
 
 class AppRoute {
   AppRoute._();
@@ -18,5 +19,4 @@ class AppRoute {
     login: (context) => const LoginScreen(),
     signup: (context) => const SignupScreen(),
   };
-
 }

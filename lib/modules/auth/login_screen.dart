@@ -1,11 +1,12 @@
 import 'dart:ffi' hide Size;
 
 import 'package:flutter/material.dart';
-import 'package:swastik/app_route.dart';
+
 import 'package:swastik/app_text_styles.dart';
 
-import 'app_routes.dart';
-import 'app_text_styles.dart';
+import '../../app_routes.dart';
+import '../../app_text_styles.dart';
+import '../home/bottom_navigation.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -37,7 +38,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                        Image.asset('assets/images/logo.png',
+                        Image.asset('assets/images/logo1.png',
                         width: 200),
                     SizedBox(height:12),
                     Text('Welcome Back',
@@ -145,8 +146,12 @@ class _LoginScreenState extends State<LoginScreen> {
 
                             ){
                           if(formkey.currentState!.validate()){
-                             print('Email : ${emailController.text}');
-                             print('Password : ${passwordController.text}');
+                            Navigator.pushAndRemoveUntil(
+                                context,
+                            MaterialPageRoute(builder: (context)=> BottomNavigationView(),
+                            ),
+                                (route) => false,
+                            );
                           }
                         }, child: Text("Login".toUpperCase(),
                       style: AppTextStyle.poppinesMedium.copyWith(
