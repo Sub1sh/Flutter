@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:swastik/app_routes.dart';
+import '../../constants/app_routes.dart';
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 

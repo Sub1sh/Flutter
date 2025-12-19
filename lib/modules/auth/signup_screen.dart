@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../app_routes.dart';
-import '../../app_text_styles.dart';
-import '../../app_text_styles.dart';
+
+import '../../constants/app_routes.dart';
+import '../../constants/app_text_styles.dart';
+
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -39,11 +40,11 @@ class _SignupScreenState extends State<SignupScreen> {
                     SizedBox(height: 20),
                     Text(
                       'Get On Board!',
-                      style: AppTextStyle.poppinesBold.copyWith(fontSize: 28),
+                      style: AppTextStyle.poppinsBold.copyWith(fontSize: 28),
                     ),
                     Text(
                       'Create your profile to start your Journey.',
-                      style: AppTextStyle.poppinesMedium.copyWith(fontSize: 16),
+                      style: AppTextStyle.poppinsMedium.copyWith(fontSize: 16),
                     ),
                     SizedBox(height: 30),
                     // Full Name
@@ -172,7 +173,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         }
                       },child: Text(
                       'Signup'.toUpperCase(),
-                      style: AppTextStyle.poppinesMedium.copyWith(
+                      style: AppTextStyle.poppinsMedium.copyWith(
                         fontSize: 16,
                         color: Colors.white,
                       ),
@@ -183,7 +184,7 @@ class _SignupScreenState extends State<SignupScreen> {
                             alignment: Alignment.center,
                             child: Text(
                               'OR',
-                              style: AppTextStyle.poppinesMedium.copyWith(
+                              style: AppTextStyle.poppinsMedium.copyWith(
                                 color: Colors.black,
                               ),
                             ),
@@ -200,7 +201,7 @@ class _SignupScreenState extends State<SignupScreen> {
                             ),
                             child: Text(
                               'Connect With Phone Number',
-                              style: AppTextStyle.poppinesMedium.copyWith(
+                              style: AppTextStyle.poppinsMedium.copyWith(
                                 fontSize: 16,
                                 color: Colors.white,
                               ),
@@ -227,7 +228,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                 SizedBox(width: 10),
                                 Text(
                                   'Connect With Google',
-                                  style: AppTextStyle.poppinesMedium.copyWith(
+                                  style: AppTextStyle.poppinsMedium.copyWith(
                                     fontSize: 16,
                                     color: Colors.blue,
                                   ),
@@ -241,7 +242,7 @@ class _SignupScreenState extends State<SignupScreen> {
                             children: [
                               Text(
                                 'Already have an Account?',
-                                style: AppTextStyle.poppinesMedium.copyWith(fontSize: 14),
+                                style: AppTextStyle.poppinsMedium.copyWith(fontSize: 14),
                               ),
                               SizedBox(width: 6),
                               GestureDetector(
@@ -254,7 +255,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                   },
                                   child: Text(
                                     'Login',
-                                    style: AppTextStyle.poppinesMedium.copyWith(
+                                    style: AppTextStyle.poppinsMedium.copyWith(
                                       fontSize: 16,
                                       color: Colors.blue,
                                     ),

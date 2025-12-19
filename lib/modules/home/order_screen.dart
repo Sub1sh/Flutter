@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../app_text_styles.dart';
+import '../../constants/app_routes.dart';
+import '../../constants/app_text_styles.dart';
+
 
 class OrderScreen extends StatefulWidget {
   const OrderScreen({super.key});
@@ -10,16 +12,15 @@ class OrderScreen extends StatefulWidget {
 }
 
 class _OrderScreenState extends State<OrderScreen> {
-
-  List<Map<String,dynamic>> orderitems=[
+  List<Map<String, dynamic>> orderItems = [
     {
-      "orderId":"454981365",
-      "amount":2.51,
-      "date": "Mon,July 2nd",
-      "weight":"1.5lbs",
-      "status":"Shipped",
-      "statusColor":Colors.purple,
-      "statusBgColor":Colors.blueAccent,
+      "orderId": "429242424",
+      "amount": 1.50,
+      "date": "Mon, July 3rd",
+      "weight": "2.5 lbs",
+      "status": "Shipped",
+      "statusColor": Colors.purple,
+      "statusBgColor": Colors.blueAccent,
     },
     {
       "orderId": "2334324",
@@ -59,14 +60,12 @@ class _OrderScreenState extends State<OrderScreen> {
     },
   ];
 
-
-
-  orderWidget(List<Map<String,dynamic>>order,int index){
-    return    Container(
+  orderWidget(List<Map<String, dynamic>> order, int index) {
+    return Container(
       width: double.infinity,
       padding: EdgeInsets.all(16),
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey),
+        border: Border.all(color: Colors.grey.shade400),
         borderRadius: BorderRadius.circular(8),
       ),
       child: Column(
@@ -75,53 +74,79 @@ class _OrderScreenState extends State<OrderScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              RichText(text: TextSpan(
-                text: 'Order', style: AppTextStyle.poppinsMedium.copyWith(fontSize: 16),
-                children: [
-                  TextSpan(text: ' # ',style: AppTextStyle.poppinsSemiBold.copyWith(fontSize: 16),),
-                  TextSpan(text: ': ',style: AppTextStyle.poppinsSemiBold.copyWith(fontSize: 14),),
-                  TextSpan(text: order[index] ['orderId'],style: AppTextStyle.poppinsSemiBold.copyWith(fontSize: 14,
-                    color: Color(0xff7169B9),
-                  ),),
-                ],
-              ),),
-              Text('\$${order[index]['amount']}',
-                style: AppTextStyle.poppinesBold.copyWith(
-                  fontSize: 16,
-                ),),
+              RichText(
+                text: TextSpan(
+                  text: 'Order',
+                  style: AppTextStyle.poppinsMedium.copyWith(fontSize: 16),
+                  children: [
+                    TextSpan(
+                      text: '# ',
+                      style: AppTextStyle.poppinsSemiBold.copyWith(
+                        fontStyle: FontStyle.italic,
+                        fontSize: 16,
+                      ),
+                    ),
+                    TextSpan(
+                      text: ':',
+                      style: AppTextStyle.poppinsSemiBold.copyWith(
+                        fontSize: 14,
+                      ),
+                    ),
+                    TextSpan(
+                      text: order[index]['orderId'],
+                      style: AppTextStyle.poppinsSemiBold.copyWith(
+                        fontSize: 14,
+                        color: Color(0xff7169B9),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Text(
+                '\$${order[index]['amount']}',
+                style: AppTextStyle.poppinsBold.copyWith(fontSize: 18),
+              ),
             ],
           ),
-          Text('Mon,July 3rd',
-            style: AppTextStyle.poppinesBold.copyWith(
-              fontSize: 14,
-            ),),
+          Text(
+            order[index]['date'],
+            style: AppTextStyle.poppinsMedium.copyWith(
+              fontSize: 12,
+              color: Colors.black54,
+            ),
+          ),
+          SizedBox(height: 12),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
                 decoration: BoxDecoration(
-                  color: Colors.grey.shade50,
+                  color: Colors.grey.shade300,
                   borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: Color(0xffE7E7E7),),
+                  border: Border.all(color: Colors.grey),
                 ),
                 padding: EdgeInsets.all(6),
-                child: Text('2.5 lbs',style: AppTextStyle.poppinsMedium.copyWith(
-                  fontSize: 12,
-                ),
+                child: Text(
+                  '2.5 lbs',
+                  style: AppTextStyle.poppinsSemiBold.copyWith(
+                    fontSize: 12,
+                    color: Colors.black54,
+                  ),
                 ),
               ),
               Container(
                 decoration: BoxDecoration(
                   color: order[index]['statusBgColor'],
                   borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: Color(0xffE7E7E7),
-                  ),
+                  border: Border.all(color: Color(0xff7169B9), width: 2),
                 ),
                 padding: EdgeInsets.all(6),
-                child: Text(order[index]['status'],style: AppTextStyle.poppinesMedium.copyWith(
-                  fontSize: 12,
-                  color: order[index]['statusColor'],
-                ),
+                child: Text(
+                  order[index]['status'],
+                  style: AppTextStyle.poppinsSemiBold.copyWith(
+                    fontSize: 14,
+                    color: order[index]['statusColor'],
+                  ),
                 ),
               ),
             ],
@@ -129,49 +154,37 @@ class _OrderScreenState extends State<OrderScreen> {
         ],
       ),
     );
-
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 60,
-      ),
+      appBar: AppBar(toolbarHeight: 60),
       body: Padding(
-        padding: const EdgeInsets.only(left: 16,right: 16,bottom: 16),
+        padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Recent Orders',style: AppTextStyle.poppinesMedium.copyWith(fontSize: 24),
+              Text(
+                'Recent Orders',
+                style: AppTextStyle.poppinsSemiBold.copyWith(fontSize: 24),
               ),
-              Text('Below are your most recent orders.',style: AppTextStyle.poppinsRegular.copyWith(fontSize: 20),
+              Text(
+                'Below are your most recent orders',
+                style: AppTextStyle.poppinsRegular.copyWith(fontSize: 14),
               ),
               SizedBox(height: 10),
               ListView.separated(
-                separatorBuilder:(context, index){
-                  return SizedBox(height:10);
+                separatorBuilder: (context, index) {
+                  return SizedBox(height: 10);
                 },
-                itemBuilder: (context, index){
-                  return orderWidget(orderitems,index);
+                itemBuilder: (context, indexs) {
+                  return orderWidget(orderItems, indexs);
                 },
-                itemCount: orderitems.length,
+                itemCount: orderItems.length,
                 shrinkWrap: true,
                 primary: false,
-                // children: [
-                //   for(int i=0;i<21;i++)...{
-                //     orderWidget(),
-                //   }
-                // orderWidget(),
-                // orderWidget(),
-                // orderWidget(),
-                // orderWidget(),
-                // orderWidget(),
-                // orderWidget(),
-                // orderWidget(),
-
-                // ],
               ),
             ],
           ),

@@ -1,32 +1,36 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AppTextStyle {
   AppTextStyle._();
-  static TextStyle poppinsRegular =TextStyle(
+
+  //Poppins
+  static TextStyle poppinsRegular = TextStyle(
     fontFamily: 'Poppins',
     fontSize: 12,
     color: Colors.black,
   );
-  static TextStyle poppinesMedium =TextStyle(
+
+  static TextStyle poppinsMedium = TextStyle(
     fontFamily: 'PoppinsMedium',
     fontSize: 12,
-      color: Colors.black,
+    color: Colors.black,
   );
-  static TextStyle poppinesBold =TextStyle(
-    fontFamily: 'PoppinsBold',
-    fontSize: 12,
-      color: Colors.black,
-  );
-  static TextStyle poppinesSemiBold =TextStyle(
+
+  static TextStyle poppinsSemiBold = TextStyle(
     fontFamily: 'PoppinsSemiBold',
     fontSize: 12,
-      color: Colors.black,
+    color: Colors.black,
   );
-  static TextStyle poppinesLight =TextStyle(
-    fontFamily: 'PoppinsLight',
-    fontSize: 12,
-      color: Colors.black,
-);
 
+  static TextStyle poppinsBold = TextStyle(
+    fontFamily: 'PoppinsBold',
+    fontSize: 12,
+    color: Colors.black,
+  );
+
+  static TextStyle poppinsExtraBold = TextStyle(
+    fontFamily: 'PoppinsExtraBold',
+    fontSize: 12,
+    color: Colors.black,
+  );
 }
