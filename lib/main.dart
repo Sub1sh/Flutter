@@ -1,26 +1,19 @@
-
 import 'package:flutter/material.dart';
-import 'package:swastik/app_routes.dart';
-import 'package:swastik/class_app.dart';
-import 'package:swastik/identity_card_view.dart';
-import 'package:swastik/morning_class.dart';
-import 'package:swastik/simple_interest.dart';
-import 'package:swastik/subtract.dart';
 
-import 'monday_class.dart';
-import 'multiply.dart';
+import 'constants/app_routes.dart';
 
-void main(){
-  runApp(Myapp());
+void main() {
+  runApp(MyApp());
 }
-class Myapp extends StatelessWidget {
-  const Myapp({super.key});
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-   initialRoute: AppRoute.home,
+      initialRoute: AppRoute.login,
       routes: AppRoute.getAppRoutes(),
     );
   }

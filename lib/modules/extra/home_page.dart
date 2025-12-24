@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:swastik/app_routes.dart';
+import '../../constants/app_routes.dart';
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -28,6 +28,12 @@ class _HomePageState extends State<HomePage> {
               Navigator.pushNamed(context, AppRoute.login);
             },
             child: Text('Login'),),
+
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pushNamed(context, AppRoute.signup);
+            },
+            child: Text('Signup'),),
 
           ElevatedButton(
             onPressed: () {
